@@ -1,4 +1,8 @@
 /*
+From last session:
+https://www.w3schools.com/js/js_object_definition.asp
+https://www.w3schools.com/js/js_object_constructors.asp
+
 Resourceful links for this session:
 https://javascript.info/class-inheritance
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super

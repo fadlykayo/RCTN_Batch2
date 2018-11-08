@@ -27,15 +27,13 @@ const sortWords = (array) => {
 // makeAllCaps(arrayOfWords);
 // sortWords(arrayOfWords);
 
-// makeAllCaps(arrayOfWords)
-// .then(sortWords)
-// .then((result) => console.log(result))
-// .catch(error => console.log(error))
+makeAllCaps(complicatedArray)
+.then((result) => console.log(result))
+.catch(error => console.log(error))
 
-// makeAllCaps(complicatedArray)
-// .then(sortWords)
-// .then((result) => console.log(result))
-// .catch(error => console.log(error))
+sortWords(complicatedArray)
+.then((result) => console.log(result))
+.catch(error => console.log(error))
 
 // ======== Homework ES6 Class =========
 

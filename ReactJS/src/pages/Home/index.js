@@ -12,7 +12,7 @@ export default class Home extends Component {
     this.state = {
       people: "Fadly",
       tempat: "Pacific Place",
-      tanggal: "",
+      tanggal: "19 November 2018",
       actors: []
     };
   }
@@ -42,17 +42,17 @@ export default class Home extends Component {
       });
     });
 
-    setTimeout(() => {
-      this.setState({
-        tanggal: "19 November 2018"
-      });
-    }, 3000);
+    // setTimeout(() => {
+    //   this.setState({
+    //     tanggal: "19 November 2018"
+    //   });
+    // }, 3000);
 
-    setTimeout(() => {
-      this.setState({
-        tempat: "GoWork"
-      });
-    }, 5000);
+    // setTimeout(() => {
+    //   this.setState({
+    //     tempat: "GoWork"
+    //   });
+    // }, 5000);
   }
 
   handleClickHeader() {
@@ -63,9 +63,11 @@ export default class Home extends Component {
   }
 
   handleClickContent() {
+    const tempat = this.state.tempat === "Pacific Place" ? "Kota Tua" : "Pacific Place"
+    const tanggal = this.state.tanggal === "19 November 2018" ? "20 November 2018" : "19 November 2018"
     this.setState({
-      tempat: "Kota Tua",
-      tanggal: "20 November 2019"
+      tempat,
+      tanggal
     });
   }
 

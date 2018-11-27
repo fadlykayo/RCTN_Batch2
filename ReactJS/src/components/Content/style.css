@@ -1,0 +1,7 @@
+.innerContent {
+  display: flex;
+
+  width: 400px;
+  flex-direction: row;
+  justify-content: space-between;
+}

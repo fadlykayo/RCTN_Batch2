@@ -1,28 +1,29 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import './style.css';
+import "./style.css";
 
-export default class Header extends Component {
-  constructor(props) {
-    super(props);
-  };
-
-  render() {
-    return (
-      <div className="header">
-        <div className="navbar">
-          <p>Header</p>
-          <p>{this.props.people}</p>
-          <button onClick={ () => this.props.onClickHandle() } style={{backgroundColor: 'pink', padding: 10}}>Save</button>
-        </div>
+const Header = ({ onClick, people }) => {
+  return (
+    <div className="header">
+      <div className="navbar">
+        <p>Header</p>
+        <p>People: {people}</p>
+        <button
+          onClick={() => onClick()}
+          style={{ backgroundColor: "pink", padding: 10 }}
+        >
+          Change People
+        </button>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default Header;
 
 Header.propTypes = {
   people: PropTypes.string.isRequired,
-  onClickHandle: PropTypes.func,
-}
+  onClickHandle: PropTypes.func
+};

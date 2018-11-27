@@ -10,7 +10,7 @@ export default class Home extends Component {
     super();
 
     this.state = {
-      people: "Budi",
+      people: "Fadly",
       tempat: "Pacific Place",
       tanggal: "",
       actors: []
@@ -56,8 +56,9 @@ export default class Home extends Component {
   }
 
   handleClickHeader() {
+    const newPeople = this.state.people === "Fadly" ? "Shabrina" : "Fadly"
     this.setState({
-      people: "Andi"
+      people: newPeople
     });
   }
 

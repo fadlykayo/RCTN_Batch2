@@ -1,22 +1,27 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React from "react";
+import {Button, Hero, HeroBody,Title, Subtitle, Container, Icon} from "bloomer";
 
-import "./style.css";
+import PropTypes from "prop-types";
 
 const Header = ({ onClick, people }) => {
   return (
-    <div className="headerQ">
-      <div className="navbarQ">
-        <p>Header</p>
-        <p>People: {people}</p>
-        <button
-          onClick={() => onClick()}
-          style={{ backgroundColor: "pink", padding: 10 }}
-        >
-          Change People
-        </button>
-      </div>
-    </div>
+    <Hero isColor='light' isSize='medium'>
+      <HeroBody>
+        <Container hasTextAlign='centered'>
+          <Icon className="fa fa-home"></Icon>
+          <Title>
+            Header
+          </Title>
+          <Subtitle>Created by: { people }</Subtitle>
+          <Button
+            isColor="warning"
+            onClick={() => onClick()}
+          >
+            Change Creator
+          </Button>
+        </Container>
+      </HeroBody>
+    </Hero>
   );
 };
 

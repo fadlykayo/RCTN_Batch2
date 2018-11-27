@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import "./style.css";
+import style from "./style.js";
 
 export default class Content extends Component {
   constructor(props) {

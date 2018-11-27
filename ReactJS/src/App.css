@@ -1,4 +1,4 @@
-.header {
+.headerQ {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,20 +7,20 @@
   background: grey;
 }
 
-.navbar {
+.navbarQ {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 800px;
 }
 
-.content {
+.contentQ {
   display: flex;
   padding: 20px 15px 20px 15px;
   background: pink;
 }
 
-.footer {
+.footerQ {
   display: flex;
   padding: 20px 15px 20px 15px;
   height: 60px;

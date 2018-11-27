@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-
 import PropTypes from "prop-types";
 
 import "./style.css";
 
 const Header = ({ onClick, people }) => {
   return (
-    <div className="header">
-      <div className="navbar">
+    <div className="headerQ">
+      <div className="navbarQ">
         <p>Header</p>
         <p>People: {people}</p>
         <button

@@ -11,6 +11,7 @@ export default class Content extends Component {
       counter: 0
     };
   }
+
   componentDidUpdate(prevProps) {
     if (prevProps.actors[0] !== this.props.actors[0]) {
       this.setState({
@@ -19,10 +20,29 @@ export default class Content extends Component {
     }
   }
 
+  renderContent() {
+    if (this.props.actors.length > 0) {
+      return this.props.actors.map((actor, index) => {
+        return (
+          <div key={index}>
+            <p>{actor}</p>
+            <br />
+          </div>
+        );
+      });
+    } else {
+      return (
+        <div>
+          <p>Loading data...</p>
+        </div>
+      );
+    }
+  }
+
   render() {
     return (
       <div>
-        <div className="content">
+        <div className="contentQ">
           <div className="innerContent">
             <p>{this.props.location}</p>
             <p>{this.props.date}</p>
@@ -37,18 +57,7 @@ export default class Content extends Component {
         <p style={{ backgroundColor: "red", color: "white", padding: 10 }}>
           Nama aktor telah berubah {this.state.counter} kali.
         </p>
-        {this.props.actors.length > 0 ? (
-          this.props.actors.map((actor, index) => (
-            <div key={index}>
-              <p>{actor}</p>
-              <br />
-            </div>
-          ))
-        ) : (
-          <div>
-            <p>Loading data...</p>
-          </div>
-        )}
+        { this.renderContent() }
       </div>
     );
   }

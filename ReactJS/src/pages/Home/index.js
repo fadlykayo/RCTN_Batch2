@@ -19,28 +19,28 @@ export default class Home extends Component {
 
   componentDidMount() {
     axios
-      .get("https://swapi.co/api/people/")
-      .then(response => {
-        let data = response.data.results;
-        let names = data.map(datum => datum.name);
-        this.setState({
-          actors: names
-        });
-        return response;
-      })
-      .then(response => axios.get(response.data.next))
-      .then(response => {
-        let data = response.data.results;
-        let names = data.map(datum => datum.name);
-        this.setState({
-          actors: names
-        });
-      })
-      .catch(err => {
-        this.setState({
-          actors: ["Error Loading"]
-        });
+    .get("https://swapi.co/api/people/")
+    .then(response => {
+      let data = response.data.results;
+      let names = data.map(datum => datum.name);
+      this.setState({
+        actors: names
       });
+      return response;
+    })
+    .then(response => axios.get(response.data.next))
+    .then(response => {
+      let data = response.data.results;
+      let names = data.map(datum => datum.name);
+      this.setState({
+        actors: names
+      });
+    })
+    .catch(err => {
+      this.setState({
+        actors: ["Error Loading"]
+      });
+    });
 
     setTimeout(() => {
       this.setState({
@@ -48,14 +48,7 @@ export default class Home extends Component {
       });
     }, 3000);
 
-    // setTimeout(() => {
-    //   this.setState({
-    //     people: "Budi"
-    //   });
-    // }, 2000);
-
     setTimeout(() => {
-      console.log("here");
       this.setState({
         tempat: "GoWork"
       });

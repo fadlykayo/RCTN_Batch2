@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link, Route } from 'react-router-dom'
 
 import { Header, Footer, Content } from "../../components";
+import { Button } from 'bloomer'
 
 import "./style.css";
 
 export default class Home extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
+    console.log({ props })
     this.state = {
       people: "Fadly",
       tempat: "Pacific Place",
@@ -18,41 +21,41 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    axios
-    .get("https://swapi.co/api/people/")
-    .then(response => {
-      let data = response.data.results;
-      let names = data.map(datum => datum.name);
-      this.setState({
-        actors: names
-      });
-      return response;
-    })
-    .then(response => axios.get(response.data.next))
-    .then(response => {
-      let data = response.data.results;
-      let names = data.map(datum => datum.name);
-      this.setState({
-        actors: names
-      });
-    })
-    .catch(err => {
-      this.setState({
-        actors: ["Error Loading"]
-      });
-    });
-
-    // setTimeout(() => {
+    // axios
+    // .get("https://swapi.co/api/people/")
+    // .then(response => {
+    //   let data = response.data.results;
+    //   let names = data.map(datum => datum.name);
     //   this.setState({
-    //     tanggal: "19 November 2018"
+    //     actors: names
     //   });
-    // }, 3000);
-
-    // setTimeout(() => {
+    //   return response;
+    // })
+    // .then(response => axios.get(response.data.next))
+    // .then(response => {
+    //   let data = response.data.results;
+    //   let names = data.map(datum => datum.name);
     //   this.setState({
-    //     tempat: "GoWork"
+    //     actors: names
     //   });
-    // }, 5000);
+    // })
+    // .catch(err => {
+    //   this.setState({
+    //     actors: ["Error Loading"]
+    //   });
+    // });
+
+    // // setTimeout(() => {
+    // //   this.setState({
+    // //     tanggal: "19 November 2018"
+    // //   });
+    // // }, 3000);
+
+    // // setTimeout(() => {
+    // //   this.setState({
+    // //     tempat: "GoWork"
+    // //   });
+    // // }, 5000);
   }
 
   handleClickHeader() {
@@ -71,19 +74,36 @@ export default class Home extends Component {
     });
   }
 
+  loginYuk = () => {
+    console.log("masuk sini log")
+    return (
+      <Link to="/login" />
+    )
+  }
+
   render() {
     let { people, tempat, tanggal, actors } = this.state;
 
+    console.log(this.props.match)
     return (
       <div>
         <Header people={people} onClick={() => this.handleClickHeader()} />
 
-        <Content
-          location={tempat}
-          date={tanggal}
-          onClick={() => this.handleClickContent()}
-          actors={actors}
-        />
+        <Button>
+          <Link to="/login"> Login </Link>
+        </Button>
+
+        <Route path={`${this.props.match.path}/content`} render={() => {
+          return (
+            <Content
+              location={tempat}
+              date={tanggal}
+              onClick={() => this.handleClickContent()}
+              actors={actors}
+            />
+          )
+        }} />
+        <Route exact path={`${this.props.match.path}`} render={() => <h2>HOME!</h2>} />
 
         <Footer footer="Footer" />
       </div>

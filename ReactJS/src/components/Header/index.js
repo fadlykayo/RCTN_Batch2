@@ -17,7 +17,7 @@ const Header = ({ onClick, people }) => {
       <HeroBody>
         <Container hasTextAlign="centered">
           <Icon className="fa fa-stroopwafel" />
-          <Title>Header</Title>
+          <Title>Atas</Title>
           <Subtitle>Created by: {people}</Subtitle>
           <Button isColor="warning" onClick={() => onClick()}>
             Change Creator

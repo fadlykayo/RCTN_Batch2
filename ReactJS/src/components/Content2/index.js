@@ -49,7 +49,7 @@ export default class AContent extends Component {
           <Card>
             <CardHeader>
               <CardHeaderTitle>
-                Meetup 1
+                Meetup 2
               </CardHeaderTitle>
               <CardHeaderIcon>
                 <Icon className="fa fa-angle-down" />

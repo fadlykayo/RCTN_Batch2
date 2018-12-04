@@ -7,8 +7,13 @@ class Footer extends Component {
   render() {
     return (
       <div className="footerQ">
-        <p>{this.props.footer}</p>
-        <p>{this.props.orang.email}</p>
+        <div style={{marginRight: 20}}>
+          <p>{this.props.footer}</p>
+        </div>
+        <div style={{marginRight: 20}}>
+          <p>{this.props.orang.username}</p>
+        </div>
+        <button onClick={null}>Click Me</button>
       </div>
     );
   }

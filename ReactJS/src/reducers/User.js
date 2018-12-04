@@ -1,6 +1,6 @@
 const initialState = {
-  username: '',
-  email: 'amburadul@google.com',
+  username: 'kosong',
+  email: 'kosong',
 };
 
 export default (state = initialState, action) => {
@@ -20,6 +20,4 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
-
-  // return state;
 };

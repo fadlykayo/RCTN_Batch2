@@ -11,7 +11,6 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
 
-    console.log({ props })
     this.state = {
       people: "Fadly",
       tempat: "Pacific Place",
@@ -86,7 +85,7 @@ export default class Home extends Component {
 
     return (
       <div>
-        <Header people={people} onClick={() => this.handleClickHeader()} />
+        <Header />
 
         <Button>
           <Link to="/login"> Login </Link>

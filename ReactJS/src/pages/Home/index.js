@@ -66,8 +66,9 @@ export default class Home extends Component {
   }
 
   handleClickContent() {
-    const tempat = this.state.tempat === "Pacific Place" ? "Kota Tua" : "Pacific Place"
-    const tanggal = this.state.tanggal === "19 November 2018" ? "20 November 2018" : "19 November 2018"
+    const tempat = this.state.tempat === "Pacific Place" ? "Kota Tua" : "Pacific Place";
+    const tanggal = this.state.tanggal === "19 November 2018" ? "20 November 2018" : "19 November 2018";
+
     this.setState({
       tempat,
       tanggal
@@ -75,7 +76,6 @@ export default class Home extends Component {
   }
 
   loginYuk = () => {
-    console.log("masuk sini log")
     return (
       <Link to="/login" />
     )
@@ -84,7 +84,6 @@ export default class Home extends Component {
   render() {
     let { people, tempat, tanggal, actors } = this.state;
 
-    console.log(this.props.match)
     return (
       <div>
         <Header people={people} onClick={() => this.handleClickHeader()} />

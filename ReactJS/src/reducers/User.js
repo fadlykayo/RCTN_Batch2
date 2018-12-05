@@ -1,6 +1,7 @@
 const initialState = {
   username: 'kosong',
   email: 'kosong',
+  phone_number: '000000',
 };
 
 export default (state = initialState, action) => {

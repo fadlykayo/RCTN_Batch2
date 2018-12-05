@@ -8,7 +8,7 @@ class Footer extends Component {
     return (
       <div className="footerQ">
         <p style={{marginRight: 20}}>{this.props.footer}</p>
-        <p style={{marginRight: 20}}>{this.props.orang.username}</p>
+        <p style={{marginRight: 20}}>{this.props.user.phone_number}</p>
         <button onClick={null}>Click Me</button>
       </div>
     );
@@ -17,7 +17,7 @@ class Footer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    orang: state.user
+    user: state.user
   };
 };
 

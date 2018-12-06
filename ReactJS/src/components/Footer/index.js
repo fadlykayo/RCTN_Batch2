@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
-import {
-  userActions
-} from '../../actions';
+import { connect } from "react-redux";
+import { userActions } from "../../actions"
 
 import "./style.css";
 
@@ -26,8 +24,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    ubahPhoneNumber: (number) => dispatch(userActions.ubahPhoneNumber(number)),
-  };
-};
+    ubahPhoneNumber: () => dispatch(userActions.ubahPhoneNumber())
+  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Footer);

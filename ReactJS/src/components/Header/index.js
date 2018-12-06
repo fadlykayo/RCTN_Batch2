@@ -17,7 +17,11 @@ import {
 
 class Header extends Component {
   handleClick() {
-    this.props.ubahEmail();
+    this.props.ubahUserName();
+  };
+
+  handleClickGender() {
+    this.props.ubahGender();
   };
 
   render() {
@@ -27,9 +31,13 @@ class Header extends Component {
           <Container hasTextAlign="centered">
             <Icon className="fa fa-stroopwafel" />
             <Title>Atas</Title>
-            <Subtitle>Created by: {this.props.people.email}</Subtitle>
+            <Subtitle>Created by: {this.props.people.username}</Subtitle>
             <Button isColor="warning" onClick={() => this.handleClick()}>
               Change Creator
+            </Button>
+            <Subtitle>Gender: {this.props.people.gender}</Subtitle>
+            <Button isColor="warning" onClick={() => this.handleClickGender()}>
+              Change Gender
             </Button>
           </Container>
         </HeroBody>
@@ -51,8 +59,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    ubahUserName: (name) => dispatch(userActions.ubahUserName(name)),
+    ubahUserName: () => dispatch(userActions.ubahUserName()),
     ubahEmail: () => dispatch(userActions.ubahEmail()),
+    ubahGender: () => dispatch(userActions.ubahGender())
   };
 };
 

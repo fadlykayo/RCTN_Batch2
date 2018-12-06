@@ -26,32 +26,32 @@ export function ubahUserName() {
       let data = response.data.results;
       let names = data.map(datum => datum.name);
       let newUserName = names[0];
-      dispatch(ubahUserNameSuccesss(newUserName))
+      dispatch(ubahUserNameSuccesss(newUserName));
     })
     .catch (err =>  {
-      dispatch(ubahUserNameFailed(err.message))
+      dispatch(ubahUserNameFailed(err.message));
     })
   }
 }
 
-export function ubahGenderSuccesss(birth_year) {
+export function ubahBirthYearSuccess(birth_year) {
   return {
-    type: 'UBAH_GENDER',
+    type: 'UBAH_BIRTH_YEAR',
     payload: {
       birth_year: birth_year
     }
   }
 }
 
-export function ubahGender() {
+export function ubahBirthYear() {
   return (dispatch) => {
     axios
     .get("https://swapi.co/api/people/")
     .then(response => {
       const data = response.data.results;
-      const birth_years = data.map(datum => datum.birth_year)
+      const birth_years = data.map(datum => datum.birth_year);
       const birth_year = birth_years[0];
-      dispatch(ubahGenderSuccesss(birth_year))
+      return dispatch(ubahBirthYearSuccess(birth_year));
     })
   }
 }

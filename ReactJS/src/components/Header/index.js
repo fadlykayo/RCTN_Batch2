@@ -21,7 +21,7 @@ class Header extends Component {
   };
 
   handleClickGender() {
-    this.props.ubahGender();
+    this.props.ubahBirthYear();
   };
 
   render() {
@@ -61,7 +61,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     ubahUserName: () => dispatch(userActions.ubahUserName()),
     ubahEmail: () => dispatch(userActions.ubahEmail()),
-    ubahGender: () => dispatch(userActions.ubahGender())
+    ubahBirthYear: () => dispatch(userActions.ubahBirthYear())
   };
 };
 

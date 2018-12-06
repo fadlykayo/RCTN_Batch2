@@ -25,7 +25,7 @@ export default (state = initialState, action) => {
         phone_number: action.payload.phone_number,
       };
 
-    case 'UBAH_GENDER':
+    case 'UBAH_BIRTH_YEAR':
       return {
         ...state,
         birth_year: action.payload.birth_year,

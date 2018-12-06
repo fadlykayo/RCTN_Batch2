@@ -10,7 +10,7 @@ class Footer extends Component {
       <div className="footerQ">
         <p style={{marginRight: 20}}>{this.props.footer}</p>
         <p style={{marginRight: 20}}>{this.props.user.phone_number}</p>
-        <button onClick={() => this.props.ubahPhoneNumber()}>Click Me</button>
+        <button onClick={ () => this.props.ubahPhoneNumber('111111') }>Click Me</button>
       </div>
     );
   }

@@ -2,11 +2,10 @@ const initialState = {
   username: 'kosong',
   email: 'kosong',
   phone_number: '000000',
-  gender: "female"
+  birth_year: '1984',
 };
 
 export default (state = initialState, action) => {
-  console.log({action})
   switch (action.type) {
     case 'UBAH_USERNAME':
       return {
@@ -29,7 +28,7 @@ export default (state = initialState, action) => {
     case 'UBAH_GENDER':
       return {
         ...state,
-        gender: action.payload.gender,
+        birth_year: action.payload.birth_year,
       }
 
     default:

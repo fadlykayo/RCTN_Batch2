@@ -35,9 +35,9 @@ class Header extends Component {
             <Button isColor="warning" onClick={() => this.handleClick()}>
               Change Creator
             </Button>
-            <Subtitle>Gender: {this.props.people.gender}</Subtitle>
+            <Subtitle>Birth Year: {this.props.people.birth_year}</Subtitle>
             <Button isColor="warning" onClick={() => this.handleClickGender()}>
-              Change Gender
+              Change Birth Year
             </Button>
           </Container>
         </HeroBody>

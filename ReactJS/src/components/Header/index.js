@@ -27,6 +27,7 @@ class Header extends Component {
   render() {
     return (
       <Hero isColor="light" isSize="small">
+        <p style={{backgroundColor: 'pink', padding: 20}}>{ this.props.loading }</p>
         <HeroBody>
           <Container hasTextAlign="centered">
             <Icon className="fa fa-stroopwafel" />
@@ -54,6 +55,7 @@ class Header extends Component {
 const mapStateToProps = (state) => {
   return {
     people: state.user,
+    loading: state.loading.loadingMessage,
   };
 };
 

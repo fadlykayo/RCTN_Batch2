@@ -1,7 +1,7 @@
 import * as userActions from './User';
-// import * as productActions from './Product';
+import * as loadingActions from './Loading';
 
 export {
 	userActions,
-  // productActions,
+	loadingActions,
 };

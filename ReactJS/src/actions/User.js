@@ -15,3 +15,12 @@ export function ubahEmail() {
     },
   };
 };
+
+export function ubahPhoneNumber(number) {
+  return {
+    type: 'UBAH_PHONE_NUMBER',
+    payload: {
+      phone_number: number,
+    },
+  };
+};

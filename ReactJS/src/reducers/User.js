@@ -18,6 +18,12 @@ export default (state = initialState, action) => {
         email: action.payload.email,
       };
 
+    case 'UBAH_PHONE_NUMBER':
+      return {
+        ...state,
+        phone_number: action.payload.phone_number,
+      };
+
     default:
       return state;
   }

@@ -20,7 +20,7 @@ class Header extends Component {
     this.props.ubahUserName();
   };
 
-  handleClickGender() {
+  handleClickBirthYear() {
     this.props.ubahBirthYear();
   };
 
@@ -37,7 +37,7 @@ class Header extends Component {
               Change Creator
             </Button>
             <Subtitle>Birth Year: {this.props.people.birth_year}</Subtitle>
-            <Button isColor="warning" onClick={() => this.handleClickGender()}>
+            <Button isColor="warning" onClick={() => this.handleClickBirthYear()}>
               Change Birth Year
             </Button>
           </Container>

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import * as loadingActions from './Loading';
+import { loadingStart, loadingEnd } from './Loading';
 
 export function ubahUserNameSuccesss(name) {
   return {
@@ -46,24 +46,20 @@ export function ubahBirthYearSuccess(birth_year) {
 }
 
 export function ubahBirthYear() {
-  return (dispatch) => {
-    const goAsync = async() => {
-      await dispatch(loadingActions.loadingStart());
+  return async(dispatch) => {
+    await dispatch(loadingStart());
 
-      await axios
-      .get("https://swapi.co/api/people/")
-      .then(response => {
-        const data = response.data.results;
-        const birth_years = data.map(datum => datum.birth_year);
-        const birth_year = birth_years[0];
+    await axios
+    .get("https://swapi.co/api/people/")
+    .then(response => {
+      const data = response.data.results;
+      const birth_years = data.map(datum => datum.birth_year);
+      const birth_year = birth_years[0];
 
-        dispatch(ubahBirthYearSuccess(birth_year));
-      })
+      dispatch(ubahBirthYearSuccess(birth_year));
+    })
 
-      await dispatch(loadingActions.loadingEnd());
-    };
-
-    goAsync();
+    await dispatch(loadingEnd());
   }
 }
 

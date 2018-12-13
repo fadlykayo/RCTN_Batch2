@@ -7,7 +7,6 @@ export default (state = initialState, action) => {
     case 'LOADING_END':
     case 'LOADING_START':
       return {
-        ...state,
         loadingMessage: action.payload.loadingMessage,
       };
 

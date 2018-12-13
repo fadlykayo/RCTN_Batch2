@@ -24,7 +24,7 @@ class App extends Component {
       <Provider store={ store }>
         <Router>
           <div>
-            <Route exact path='/' component={null} />
+            <Route exact path='/' component={Home} />
             <Route path='/login' component={Login} />
             <Route path='/logout' render={(props) => <Logout isLogin={this.state.isLogin}/>} />
             <Route path='/home' component={Home} />

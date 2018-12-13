@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { loadingStart, loadingEnd } from './Loading';
 
-export function ubahUserNameSuccesss(name) {
+export function ubahUserNameSuccess(name) {
   return {
     type: 'UBAH_USERNAME',
     payload: {
@@ -26,9 +26,9 @@ export function ubahUserName() {
     .get("https://swapi.co/api/people/")
     .then(response => {
       let data = response.data.results;
-      let names = data.map(datum => datum.name);
-      let newUserName = names[0];
-      dispatch(ubahUserNameSuccesss(newUserName));
+      let names = data.map(datum => datum.name); //array of names
+      let newUserName = names[1];
+      dispatch(ubahUserNameSuccess(newUserName));
     })
     .catch (err =>  {
       dispatch(ubahUserNameFailed(err.message));

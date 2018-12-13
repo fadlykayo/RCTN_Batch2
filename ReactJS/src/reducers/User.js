@@ -1,6 +1,6 @@
 const initialState = {
-  username: 'kosong',
-  email: 'kosong',
+  username: 'kosong dari reducer',
+  email: 'kosong@gmail.com',
   phone_number: '000000',
   birth_year: '1984',
 };
